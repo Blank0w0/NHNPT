@@ -1,0 +1,85 @@
+
+/* for all layout of img*/
+.gallery-layout {
+	margin: 1em;
+	padding: 0;
+	list-style-type: none;
+}
+
+.gallery-layout a {
+	display: block;
+	margin-bottom: 1em;
+	text-decoration: none;
+}
+
+.caption {
+	padding: 1em;
+	background: hsla(246, 40%, 30%, .6);
+	color: white;
+	font-size: 1.2em;
+	transition: all .4s;
+}
+
+a:focus .caption,
+a:hover .caption {
+	background: rgb(30, 12, 172);
+}
+
+.caption-title {
+	margin: 0;
+	font-size: 1.4em;
+	line-height: 1.1em;
+	color: antiquewhite;
+}
+/* End of img layout*/
+
+/* Grid Layout*/
+@supports (grid-area: auto) {
+
+	@media screen and (min-width: 480px) {
+
+		.gallery-layout  {
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			grid-gap: 1em;
+		}
+
+
+		.card {
+			display: grid;
+		}
+
+		.card img,
+		.caption {
+			grid-column: 2;
+			grid-row: 1;
+		}
+
+		.caption {
+			display: flex;
+			align-items: flex-end;
+			opacity: 0;
+		}
+
+		a:focus .caption,
+		a:hover .caption {
+			background: hsla(246, 40%, 30%, .6);
+			opacity: 1;
+		}
+
+	}
+
+	@media screen and (min-width: 80em) {
+
+		.gallery-layout  {
+			grid-template-columns: repeat(3, 2fr);
+		}
+
+		.double {
+			grid-column: span 2;
+			grid-row: span 2;
+		}
+
+	}
+
+}

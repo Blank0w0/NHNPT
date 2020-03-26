@@ -1,0 +1,679 @@
+/*For Scoll Down Button */
+#sc {
+    bottom: 100px;
+    height: 10px;
+    margin-left: 50wm;
+    position: absolute;
+    left: 50%;
+    cursor: pointer;
+    text-align: center;
+    width: 100px;
+    z-index: 100;
+  }  
+  .chevron {
+    position: absolute;
+    width: 28px;
+    height: 8px;
+    opacity: 0;
+    cursor: pointer;
+    transform: scale3d(0.5, 0.5, 0.5);
+    animation: move 3s ease-out infinite;
+  }
+  
+  .chevron:first-child {
+    animation: move 3s ease-out 1s infinite;
+  }
+  
+  .chevron:nth-child(2) {
+    animation: move 3s ease-out 2s infinite;
+  }
+  
+  .chevron:before,
+  .chevron:after {
+    content: ' ';
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 51%;
+    background: #fff;
+  }
+  
+  .chevron:before {
+    left: 0;
+    transform: skew(0deg, 30deg);
+  }
+  
+  .chevron:after {
+    right: 0;
+    width: 50%;
+    transform: skew(0deg, -30deg);
+  }
+
+  @keyframes move {
+    25% {
+      opacity: 1;
+  
+    }
+    33% {
+      opacity: 1;
+      transform: translateY(30px);
+    }
+    67% {
+      opacity: 1;
+      transform: translateY(40px);
+    }
+    100% {
+      opacity: 0;
+      transform: translateY(55px) scale3d(0.5, 0.5, 0.5);
+    }
+  }
+  
+  @keyframes pulse {
+    to {
+      opacity: 1;
+    }
+  }
+
+  /*Main Cover Style Video and Phone Version*/
+#maincover{
+
+    width: 100%;
+
+    height: 100vh;
+
+    overflow: hidden;
+
+    display: flex; 
+
+    top: 0;   
+
+}
+
+.desktopV{
+
+	position: absolute;
+
+	top: 0;
+
+	left: 0;
+
+	height: 100vh;
+
+	width: 100%;
+
+    overflow: hidden;  
+
+    object-fit: cover;
+
+	
+
+}
+
+.desktopV video{
+
+	min-height: 100%;
+
+	min-width: 100%;
+
+	
+
+}
+
+
+.phoneV img {
+
+    position: absolute;
+
+    width: 100%;
+
+    height: 110vh;
+
+    left: 0%;
+
+    overflow: hidden;  
+
+    object-fit: cover;
+
+}
+
+@media all and (min-width: 500px) {
+
+    .desktopV {display:block;}
+
+    .phoneV {display:none;}
+
+}
+
+
+
+@media all and (max-width: 499px) {
+
+    .desktopV {display:none;}
+
+    .phoneV {display:block;}
+
+}
+
+/*cover Text section */
+
+.cover-text{
+
+    font-family: Ubuntu;
+
+    height: 100vh;
+
+	width: 100vw;
+
+	position: absolute;
+
+	top: 0;
+
+	left: 0;
+
+	background: rgba(48, 46, 46, 0.35);
+
+
+
+    text-align: center;
+
+}
+
+.cover-text-content {
+
+    z-index: 2;
+
+	margin-top:15%;
+    opacity: 0.8;
+    color: rgb(255, 255, 255);
+
+}
+
+.cover-text-content h1 {
+
+    font-family: Ubuntu;
+	font-size: 4.5em;
+    
+    color: rgb(255, 255, 255);
+
+	
+
+}
+
+#message {
+
+     font-family: Ubuntu;
+    
+    color: rgb(255, 255, 255);
+
+}
+
+.cover-text-content p{
+
+	font-size: 5rem;
+
+}
+
+@media(max-width:768px){
+
+    .cover-text-content {margin-top:20%;}
+
+	.cover-text-content h2{font-size: 2rem;}
+
+    .cover-text-content p{font-size: 3rem;}
+
+}
+
+/*cover text section end */
+
+
+
+/* Menu-Ber Section */
+
+nav{
+
+    max-width: 100%;
+
+    margin: 0 auto;
+
+    background-color: #e9e8e8;
+
+    padding: 0;
+
+    z-index: 10;
+
+    
+
+}
+
+#logo{
+
+    width: 100px;
+
+    margin: -20%;
+
+}
+
+.icon{
+    width: 20px;
+    margin: 0%;
+    padding: 0%;
+}
+.menu-bar{
+
+    font-family: Ubuntu, Noto,'Serif' ;
+
+    line-height: 10%;
+
+    text-align: center;
+
+    position: relative;
+}
+
+.menu-link,.dropdown-item{
+
+    text-transform:uppercase;
+
+    color:#307167;
+
+    font-size: 18px;
+
+    display: inline-block;
+
+    padding: 18px;
+
+    text-align: center;
+
+    text-decoration: none !important;
+
+    font-weight:bold;
+
+}
+
+.menu-link:hover{
+
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1), inset 0 0 1px rgba(255, 255, 255, 0.6);
+
+    background: rgba(255, 255, 255, 0.1);
+
+    color: rgba(4, 29, 172, 0.7);
+
+}
+
+
+
+
+
+.sticky {
+
+    position: fixed;
+
+    top: 0;
+
+    width: 100%;
+
+  }
+
+  
+
+  .sticky + .menu-bar {
+
+    padding-top: 102px;
+
+  }
+
+  .navbar-toggler-icon {
+
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255, 1)' stroke-width='4' stroke-linecap='round' stroke-miterlimit='15' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+
+    background-color:rgb(94, 219, 21);
+
+}
+
+/*Menu-Ber Section End */
+
+
+
+/**Developed by Sam | 18 Jan 2019 | 3:39 am **/
+
+/**Changing font effect | Crafting on process**/
+
+/* .rotat::after{
+
+    animation-name: words;
+
+    animation-direction: normal;
+
+    animation-duration: 15s;
+
+    animation-fill-mode: forwards;
+
+    animation-iteration-count: infinite;
+
+    animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+
+    content: " Nay Pyi Taw";
+
+    opacity: 0;
+
+    over
+
+
+
+}
+
+@keyframes words{
+
+    25%{
+
+        content : " Nay Pyi Taw";
+
+        opacity: 1;
+
+    }
+
+    50%{
+
+        opacity: 0;
+
+    }
+
+    75%{
+
+        content : "Smart City";
+
+        opacity: 1;
+
+    }
+
+    100%{
+
+        opacity: 0;
+
+    }
+
+
+
+
+
+} */
+
+
+
+/*The end of Changing font effect*/
+
+
+
+
+
+/*The entire portion deals with animating the Logo*/
+
+
+
+/*The end of logo animation*/
+
+
+
+/*added feature for the scrolling*/
+
+
+
+html{
+
+    scroll-behavior: smooth;
+
+}
+
+
+
+/*The end of scrolling */
+
+
+
+
+
+/*Type effect*/
+
+.learn{
+
+    font-size: 20px;
+
+    font-family: Ubuntu;
+
+    font-weight: bold;
+
+  }
+
+/*Finished Portion by 19 Jan 2019 by Sam*/
+
+.row {
+
+    width: 100%;
+
+    margin: 0%;
+
+}
+
+
+
+/*Footer*/
+
+.footer{
+
+	background-color: #1A3C34;
+
+	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+
+	box-sizing: border-box;
+
+	width: 100%;
+
+	text-align: center;
+
+    padding: 30px;
+
+}
+
+.footer .footer-logo{
+
+    font-family: lobster;
+
+    font-size: 1.5rem;
+
+    color: rgba(8, 192, 85, 0.363)
+
+}
+
+
+
+
+
+
+
+.footer .footer-left, 
+
+.footer .footer-right{
+
+	display: inline-block;
+
+	vertical-align: top;
+
+}
+
+
+
+/* Footer left */
+
+
+
+.footer .footer-left{
+
+	width: 40%;
+
+}
+
+
+
+/* Footer links */
+
+
+
+.footer .footer-links{
+
+	font-family: Ubuntu ;
+
+    text-transform:uppercase;
+
+    color: rgb(236, 231, 231);
+
+    font-size: 1rem;
+
+    display: inline-block;
+
+}
+
+
+
+.footer .footer-links a{
+
+	display:inline-block;
+
+	line-height: 1.8;
+
+	text-decoration: none;
+
+    color:  inherit;
+
+    padding: 18px;
+
+    text-align: center;
+
+    text-decoration: none ;
+
+}
+
+.footer-links a:hover{
+
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1), inset 0 0 1px rgba(255, 255, 255, 0.6);
+
+    background: rgba(255, 255, 255, 0.1);
+
+    color: rgba(139, 152, 224, 0.7);
+
+}
+
+
+
+
+
+
+
+/* Footer Right */
+
+.footer .footer-right{
+
+	width: 50%;
+
+}
+
+.footer .footer-about{
+
+	color:  #ffffff;
+
+	font-size: 1rem;
+
+	font-weight: normal;
+
+	margin: 0;
+
+}
+
+.footer .copyright{
+
+	color:  #8f9296;
+
+	font-size: 1rem;
+
+    margin: 0;
+
+}
+
+.footer .footer-about span{
+
+	display: block;
+
+	color:  #ffffff;
+
+	font-size: 1.5rem;
+
+	font-weight: bold;
+
+	margin-bottom: 20px;
+
+}
+
+
+
+@media (max-width: 880px) {
+
+    #message{
+         font-size: 2rem;
+
+        margin: 0;
+        
+        color: rgb(255, 255, 255);
+
+    }
+
+    .cover-text-content h1 {
+
+        font-size: 2rem;
+
+        margin: 0;
+        
+        color: rgb(255, 255, 255);
+    
+        
+    
+    }
+
+	.footer{
+
+		font: bold 14px sans-serif;
+
+	}
+
+
+
+	.footer .footer-left,
+
+	.footer .footer-right{
+
+		display: block;
+
+        width: 100%;
+
+		text-align: center;
+
+	}
+
+    .footer .footer-about{
+        font-family: Ubuntu;
+        font-size: 1.2rem;
+        text-align: center;
+
+    }
+
+
+
+
+
+}
+
+hr{
+
+    background-color: #ffffff;
+
+}
+
+
+
